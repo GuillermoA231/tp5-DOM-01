@@ -4,11 +4,23 @@ Cuando el usuario adivine el numero mostrar un mensaje indicando al usuario que 
 /*
 
     <main>
-        <input type="number" id="inputUsuario">
-      <button class="btn btn-outline-danger" id="empezarJuego">comenzar el juego</button>
-        <h2 id ="resultado"></h2>
+        <form>
+        <label for="inputUsuario">Ingrese un número:</label>
+        <input type="number" id="inputUsuario" name="inputUsuario">
+        <input type="submit" value="Enviar" onclick="resultadoJuego(inputUsuario)" >
+      </form>
+      
+      <button class="btn btn-outline-danger" id="empezarJuego">
+        comenzar el juego
+      </button>
+      <h2 id="resultado"></h2>
     </main>
      */
+
+let query = document.querySelector("form");
+let submitButton = document.getElementById('inputButton');
+let btnEmpezarJuego = document.getElementById('empezarJuego');
+
 function randomNumber() {
   let random = Math.floor(Math.random() * 10) + 1;
   return random;
@@ -24,4 +36,3 @@ function resultadoJuego(inputUsuario) {
     ? "El número magico es menor"
     : "Ingrese un número valido";
 }
-document.querySelector("#inputUsuario").onclick();
